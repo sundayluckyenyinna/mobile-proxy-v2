@@ -1,0 +1,44 @@
+server:
+    port: 1018
+spring:
+    application:
+        name: mobile-proxy   
+    datasource:
+        url: jdbc:sqlserver://10.10.0.32;databaseName=omnix;encrypt=true;trustServerCertificate=true;
+        username: omnixservice
+        password: Ab123456
+#        driver-class-name:  com.microsoft.sqlserver.jdbc.SQLServerDriver
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        initialization-mode: always
+    jpa:
+        hibernate:
+            dialect: org.hibernate.dialect.SQLServer2012Dialect
+            ddl-auto: update
+            show-sql: true
+    thymeleaf:
+        cache: false
+security:
+    pgp:
+        encryption:
+            userId: ENC(mbWeJaB9OUJvG7b1UobXdtlB5gix+uAsO3VvrdJuw4c=)
+            password: ENC(XTxipOSAIy/7lpDOoJZuEe5w57vhtfEh)
+            privateKey: C:\\MobileProxy\\keys\\privatekey.asc
+            publicKey: C:\\MobileProxy\\keys\\recipient_publickey.asc
+            apPprivateKey: C:\\MobileProxy\\keys\\recipient\\recipient_privatekey.asc
+            appPrivateKeyPass : ENC(XTxipOSAIy/7lpDOoJZuEe5w57vhtfEh)
+    omnix:
+        encryption:
+            key: FLWSECK-f6be2996841f1da0dfb7e27b9a3bd5bf-X
+        base-url:  https://10.10.0.32:8443/omnix/api
+#        base-url: https://localhost:8443/omnix/api
+        file-base-url:  http://10.10.0.32:1019/ftp
+    proxy:
+        url: http://mobilebanking.accionmfb.com:1018/proxy
+    jwt:
+        signing:
+            Key: j3H5Ld5nYmGWyULy6xwpOgfSH++NgKXnJMq20vpfd+8=t
+    aes:
+        encryption:
+            key : 77T18925x42783H7508302949Q618671
+    option: AES
+
