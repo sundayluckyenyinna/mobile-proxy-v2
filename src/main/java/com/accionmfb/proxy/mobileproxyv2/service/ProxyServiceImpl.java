@@ -122,8 +122,11 @@ public class ProxyServiceImpl implements ProxyService{
         String joined = String.join("/", urlTokens);
         joined = joined.startsWith("/") ? joined : "/".concat(joined);
         joined = joined.replaceAll("//", "/");
+        String completeUrl = omnixBaseUrl.concat(joined);
+
         log.info("Resolved Omnix Resource URL: {}", joined);
-        return  omnixBaseUrl.concat(joined);
+        log.info("Resolved complete URL: {}", completeUrl);
+        return completeUrl;
     }
 
     @Override

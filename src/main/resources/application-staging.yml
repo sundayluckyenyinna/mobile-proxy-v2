@@ -1,18 +1,13 @@
 server:
     port: 1018
-
 spring:
     application:
-        name: mobile-proxy   
+        name: mobile-proxy
     datasource:
-#        localhost
-#        url: ENC(YdU8jCaiJ+r3CXw3YEEm4JGJ7ht1X9/PykIr0d9JhHhac0YrKxFOgs6RkA378zhzbrdWXTJSXY40js/uCCidkzJ8dZJr/lUz)
-#        .32
-        
-        url:  jdbc:sqlserver://192.168.1.37;databaseName=omnix;encrypt=true;trustServerCertificate=true;
-        username:  ENC(6tnkBZmV7hyJESIdrgMIWA==)
-        password: ENC(LR+qQ9W1kzbii+Xb7S4fZxGnvl2ZzzcK)
-        driver-class-name:  com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://10.10.0.81;databaseName=omnix;encrypt=true;trustServerCertificate=true;
+        username: omnixservice
+        password: Ab123456@
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
         initialization-mode: always
     jpa:
         hibernate:
@@ -33,16 +28,14 @@ security:
     omnix:
         encryption:
             key: FLWSECK-f6be2996841f1da0dfb7e27b9a3bd5bf-X
-        base-url:  https://192.168.1.7:8443/omnix/api
-#        base-url:  https://localhost:8443/omnix/api
+        base-url: https://10.10.0.81:8443/omnix/api
+        file-base-url:  http://10.10.0.81:1019/ftp
     proxy:
-#        url: http://localhost:1018/proxy
-        url: http://mobilebankinglive.accionmfb.com:1018/proxy
+        url: http://mob.accionmfb.com:1018/proxy
     jwt:
         signing:
             Key: j3H5Ld5nYmGWyULy6xwpOgfSH++NgKXnJMq20vpfd+8=t
     aes:
         encryption:
-            key : 99T18925x42983H9508302949Q618691
+            key : 77T18925x42783H7508302949Q618671
     option: AES
-

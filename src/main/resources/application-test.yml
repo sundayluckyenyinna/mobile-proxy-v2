@@ -4,9 +4,9 @@ spring:
     application:
         name: mobile-proxy   
     datasource:
-        url: jdbc:sqlserver://10.10.0.81;databaseName=omnix;encrypt=true;trustServerCertificate=true;
+        url: jdbc:sqlserver://10.10.0.32;databaseName=omnix;encrypt=true;trustServerCertificate=true;
         username: omnixservice
-        password: Ab123456@
+        password: Ab123456
 #        driver-class-name:  com.microsoft.sqlserver.jdbc.SQLServerDriver
         driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
         initialization-mode: always
@@ -30,7 +30,8 @@ security:
         encryption:
             key: FLWSECK-f6be2996841f1da0dfb7e27b9a3bd5bf-X
         base-url:  https://10.10.0.32:8443/omnix/api
-#        base-url: https://localhost:8443/omnix/api
+#        base-url: https://10.10.0.81:8443/omnix/api
+#        file-base-url:  http://10.10.0.81:1019/ftp
         file-base-url:  http://10.10.0.81:1019/ftp
     proxy:
         url: http://mob.accionmfb.com:1018/proxy
